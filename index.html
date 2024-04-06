@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Website</title>
+    
+    <link rel="stylesheet" href="./styles.css">
+    <!-- For icons -->
+    <script src="https://kit.fontawesome.com/3bf6604876.js" crossorigin="anonymous"></script>
+    
+        <!-- For smooth scrolling and responsive navigation -->
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                var scrollLinks = document.querySelectorAll('a[href^="#"]');
+                var checkBtn = document.getElementById("check");
+                var navUl = document.querySelector("nav ul");
+                function closeNavbar() {
+                    checkBtn.checked = false;
+                    navUl.style.left = "-100%";
+                }
+    
+                checkBtn.addEventListener("change", function () {
+                    if (this.checked) {
+                        navUl.style.left = "0";
+                    } else {
+                        closeNavbar();
+                    }
+                });
+    
+                scrollLinks.forEach(function (scrollLink) {
+                    scrollLink.addEventListener("click", function (e) {
+                        closeNavbar();
+    
+                        e.preventDefault();
+                        var targetId = this.getAttribute("href").substring(1);
+                        var targetElement = document.getElementById(targetId);
+    
+                        if (targetElement) {
+                            targetElement.scrollIntoView({
+                                behavior: "smooth"
+                            });
+                        }
+                    });
+                });
+                var navItems = document.querySelectorAll("nav ul li a");
+    
+                navItems.forEach(function (navItem) {
+                    navItem.addEventListener("click", function () {
+                        closeNavbar();
+                    });
+                });
+            });
+            navItems.forEach(function (navItem) {
+    navItem.addEventListener("click", function () {
+        checkBtn.checked = false;
+    });
+});
+        </script>
+</head>
+<body>
+     <!-- Navigation Bar -->
+<nav>
+    <input type="checkbox" id="check">
+    <label for="check" class="checkbtn">
+        <i class="fas fa-bars"></i>
+    </label>
+    <label class="logo">My Portfolio</label>
+    <ul>
+        <li><a class="active" href="#">Home</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#contacts">Contacts</a></li>
+    </ul>
+</nav>
+    <!-- Introduction Part  -->
+    <div class="container">
+        <section class="intro-text">
+            <div ><h1><span style="color:#004988;">Hi, I'm Shivam</span><br>A student of MIT Muzaffarpur</h1>
+                <div class="buttons">
+                <a class="download-btn" href="https://drive.google.com/file/d/15OOqCtM24RqQhi72ZVyFrMJmnDkgOAUD/view?usp=drivesdk">Download Resume </a>
+            <!-- <a href="https://drive.google.com/file/d/15OOqCtM24RqQhi72ZVyFrMJmnDkgOAUD/view?usp=drivesdk">
+                 <button class="download-btn">Download Resume </button> -->
+                    <button class="contact-btn">Contact Me</button></div></div>
+                <div><p>Hi, I'm Shivam Kumar Singh, a third-year IT student at MIT Muzaffarpur. I'm learning C++, DSA, and Web Development to be better in tech. I enjoy learning new things and want to do well in my studies and future job. Thanks for checking out my portfolio!</p></div>
+        </section>
+        <section class="profile-pic">
+            <img src="shivam.jpg" height="430" width="430">
+        </section>
+    </div>
+    <!-- Skills section -->
+    <section class="skills" id="skills">
+        <div class="container-skils">
+            <h2>Skills</h2>
+            <div class="skill">
+                <img class="skill-img" src="C_Logo.png" alt="C_Logo">
+                <h3>C Programming</h3>
+                <p>⭐ ⭐ ⭐</p>
+            </div>
+            <div class="skill">
+                <img class="skill-img" src="C++_logo.png" alt="C++_logo">
+                <h3>C++</h3>
+                <p>⭐ ⭐ ⭐ ⭐</p>
+            </div>
+            <div class="skill">
+                <img class="skill-img" src="edit-or-fix-any-html-css-javascript-code-of-your-website.jpg" alt="C++_logo">
+                <h3>Front-end Web development</h3>
+                <p>⭐ ⭐ ⭐</p>
+            </div>
+        </div>
+    </section>
+    <!-- Education Section -->
+    <h2>Education</h2>
+    <section class="education" id="education">
+        <div class="container-edu">
+            <div class="edu">
+                <img class="edu-img" src="College.png" alt="C++_logo">
+                <h4>Muzaffarpur Institute of Technology</h4>
+                <p>Pursuing B.tech from department of Information Technology</p>
+            </div>
+            <div class="edu">
+                <img class="edu-img" src="High School.png" alt="high School">
+                <h4>Global International Public School</h4>
+                <p>Passed class 12 from CBSE, New Delhi in 2022</p>
+            </div>
+            <div class="edu">
+                <img class="edu-img" src="School.png" alt="School">
+                <h4>St. Xavier's Jr./Sr. School</h4>
+                <p>Passed class 10 from CBSE, New Delhi in 2020</p>
+            </div>
+        </div>
+    </section>
+<!-- For the footer section -->
+<footer id="contacts">
+    <h3>Follow Me</h3>
+    <ul class="social-icons">
+      <li><a href="https://www.instagram.com/shivam_singh852156?igsh=bGoxZGlhM2MzcWJi"><img src="instagram.png" alt="instagram"></a></li>
+      <li><a href="https://x.com/ShivamSingh1223?t=zuBmOhJIYNz4u3LxJ5ZPcQ&s=09"><img src="twitter.png" alt="twitter"></a></li>
+      <li><a href="http://surl.li/scdev"><img src="linkedin.png" alt="linkedin"></a></li>
+      <li><a href="https://github.com/Shivam-kumar2005"><img src="github.png" alt="github"></a></li>
+    <!-- <li><a href="https://github.com/Somesh-Mishra-9"><img src="github.png" alt="github"></a></li> -->
+    </ul>
+  </div>
+</footer>
